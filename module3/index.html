@@ -18,7 +18,7 @@
             </div>
         </form>
        <div class="row">
-           <div class="col-xs-12" ng-if="ctrl.error" class="text text-warning">{{ctrl.error}}</div>
+           <div class="col-xs-12" ng-if="ctrl.error"><p class="alert-warning" ng-cloak> {{ctrl.error}}</p></div>
            <!-- Bonus loader (see Bonus section of the assignment) -->
            <items-loader-indicator></items-loader-indicator>
 

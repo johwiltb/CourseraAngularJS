@@ -12,14 +12,14 @@
         ctrl.search = function() {
             ctrl.found = [];
             ctrl.error = "";
-            if (ctrl.searchTerm === "" ) {
-                ctrl.error = "No search term entered!";
+            if (ctrl.searchTerm === ""  || ctrl.searchTerm === undefined) {
+                ctrl.error = "Nothing Found!";
                 return;
             }
             var response = MenuSearchService.getMatchedMenuItem(ctrl.searchTerm);
             response.then(function (data) {
                 var menuItems = data.data.menu_items;
-                $log.info(ctrl.searchTerm);
+                $log.info("Search term: " + ctrl.searchTerm);
                 for (var i = 0; i < menuItems.length; i++) {
                     if (menuItems[i].description.search(ctrl.searchTerm) >= 0) {
                         ctrl.found.push(menuItems[i]);
@@ -28,7 +28,7 @@
                 $log.info(ctrl.found);
                 $log.info("Length: " + ctrl.found.length);
                 if (ctrl.found.length === 0) {
-                    ctrl.error = "No Items Found!";
+                    ctrl.error = "Nothing Found!";
                 }
             })
                 .catch(function (error) {
