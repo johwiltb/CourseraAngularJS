@@ -7,11 +7,17 @@
 
     MenuAppController.$inject = ['MenuDataService'];
     function MenuAppController(MenuDataService) {
-        console.warn("Got to MenuAppController");
         var ctrl = this;
 
-        ctrl.getCategories = JSON.parse(MenuDataService.getAllCategories());
-        console.log("Categories: " + ctrl.getCategories);
+        ctrl.categories = MenuDataService.getAllCategories();
+
+        // ctrl.categories.push({
+        //     name: "fun"
+        // });
+
+        console.log(ctrl.categories);
+
+
     }
     
 })();
