@@ -14,7 +14,7 @@
 
             $http.get("https://davids-restaurant.herokuapp.com/categories.json")
                 .success(function (data) {
-                    deferred.resolve(data.data);
+                    deferred.resolve(data);
                 })
                 .error(function (reason){
                     deferred.reject(reason);

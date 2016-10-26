@@ -5,10 +5,14 @@
     angular.module('MenuApp')
         .component('categories', {
             templateUrl: 'templates/categories.template.html',
-            controller: 'MenuAppController as ctrl',
+            controller: 'MenuAppController as mctrl',
+            bindings: {
+                list: '<'
+            },
             resolve: {
-                categories: ['MenuDataService', function (MenuDataService) {
-                    return MenuDataService.getAllCategories();
+                list: ['MenuDataService', function (MenuDataService) {
+                    var data = MenuDataService.getAllCategories();
+                    MenuAppController.categories = data.$$state.value;
                 }]
             }
 

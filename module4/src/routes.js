@@ -19,14 +19,18 @@
 
             .state('categoriesList', {
                 url: '/categories',
-                templateUrl: 'templates/categories.template.html',
+                templateUrl: 'templates/main-categories.template.html',
                 controller: 'MenuAppController as ctrl',
                 resolve: {
                     categories: ['MenuDataService', function (MenuDataService) {
                         return MenuDataService.getAllCategories();
-
                     }]
                 }
+            })
+            .state('categoriesList.itemDetail', {
+                url: '/category/{itemId}',
+                templateUrl: 'templates/items.template.html',
+                controller: 'ItemDetailsController as ictrl'
             });
     }
 

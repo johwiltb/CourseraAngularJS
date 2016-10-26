@@ -9,14 +9,21 @@
     function MenuAppController(MenuDataService) {
         var ctrl = this;
 
-        ctrl.categories = MenuDataService.getAllCategories();
+        var response = MenuDataService.getAllCategories();
 
-        // ctrl.categories.push({
-        //     name: "fun"
-        // });
+        response.then(function (data) {
+            ctrl.categories = data;
+        });
 
-        console.log(ctrl.categories);
 
+        ctrl.getItems = function (category) {
+            var response = MenuDataService.getItemsForCategory(category);
+
+            response.then(function (data) {
+                ctrl.items = data;
+                console.log(data);
+           });
+        };
 
     }
     
