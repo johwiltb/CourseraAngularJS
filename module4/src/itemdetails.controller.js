@@ -10,6 +10,7 @@
 
     ItemDetailsController.$inject = ['$stateParams', 'MenuAppController'];
     function ItemDetailsController($stateParams, MenuAppController) {
+        console.log("Made it to ItemDetails");
         var itemDetail = this;
 
         var items = MenuAppController.items;
