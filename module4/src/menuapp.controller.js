@@ -3,7 +3,8 @@
     'use strict';
 
     angular.module('MenuApp')
-        .controller('MenuAppController', MenuAppController);
+        .controller('MenuAppController', MenuAppController)
+        .controller('ItemDetailsController', ItemDetailsController);
 
     MenuAppController.$inject = ['MenuDataService'];
     function MenuAppController(MenuDataService) {
@@ -25,6 +26,19 @@
            });
         };
 
+    }
+
+    ItemDetailsController.$inject = ['$stateParams', 'MenuAppController'];
+    function ItemDetailsController($stateParams, MenuAppController) {
+        console.log("Made it to ItemDetails");
+        var itemDetail = this;
+
+        var items = MenuAppController.items;
+
+        var item = items[$stateParams.itemId];
+
+        itemDetail.name = item.name;
+        itemDetail.desc = item.description;
     }
     
 })();

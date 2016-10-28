@@ -29,8 +29,8 @@
             })
             .state('itemList', {
                 url: '/category/{itemId}',
-                templateUrl: 'templates/items.template.html',
-                controller: 'ItemDetailsController as ictrl'
+                templateUrl: 'templates/main-items.template.html',
+                // controller: 'ItemDetailsController as ictrl'
             });
     }
 
