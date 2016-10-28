@@ -27,7 +27,7 @@
                     }]
                 }
             })
-            .state('categoriesList.itemDetail', {
+            .state('itemList', {
                 url: '/category/{itemId}',
                 templateUrl: 'templates/items.template.html',
                 controller: 'ItemDetailsController as ictrl'

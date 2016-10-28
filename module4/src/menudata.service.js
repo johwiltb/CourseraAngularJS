@@ -23,10 +23,17 @@
         };
 
         service.getItemsForCategory = function (categoryShortName) {
+            var deferred = $q.defer();
+
+
             return $http.get("https://davids-restaurant.herokuapp.com/menu_items.json?category=" + categoryShortName)
-                .then(function (data) {
-                    return data;
+                .success(function (data) {
+                    deferred.resolve(data);
+                })
+                .error(function (reason) {
+                    deferred.reject(reason);
                 });
+            return deferred.promise;
         };
     }
 
