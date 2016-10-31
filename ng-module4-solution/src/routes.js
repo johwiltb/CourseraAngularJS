@@ -30,7 +30,6 @@
             .state('itemList', {
                 url: '/category/{itemId}',
                 templateUrl: 'templates/main-items.template.html',
-                // controller: 'ItemDetailsController as ictrl'
             });
     }
 

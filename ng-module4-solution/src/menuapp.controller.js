@@ -23,7 +23,7 @@
             var response = MenuDataService.getItemsForCategory(category);
 
             response.then(function (data) {
-                ctrl.items = data;
+                ctrl.items = data.data.menu_items;
                 console.log(ctrl.items);
             });
         };
