@@ -1,3 +1,13 @@
+
 <ol>
-    <ul ng-repeat="item in $ctrl.itemsList">{{item.name}} - {{item.description}}</ul>
+    <ul ng-repeat="item in $ctrl.itemsList">
+        <div class="panel panel-default">
+            <div class="panel-heading">{{item.name}}</div>
+            <div class="panel-body">{{item.description}}</div>
+            <ul class="list-group" >
+                <li class="list-group-item list-group-item-info" ng-if="item.price_small">{{item.small_portion_name || "small"}} - ${{item.price_small}}</li>
+                <li class="list-group-item list-group-item-info" ng-if="item.price_large">{{item.large_portion_name || "large"}} - ${{item.price_large}}</li>
+            </ul>
+        </div>
+    </ul>
 </ol>

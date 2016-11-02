@@ -23,7 +23,6 @@
         };
 
         service.getItemsForCategory = function (categoryShortName) {
-            console.log("Category name: " + categoryShortName);
             var deferred = $q.defer();
 
             return $http.get("https://davids-restaurant.herokuapp.com/menu_items.json?category=" + categoryShortName)

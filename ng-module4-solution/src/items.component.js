@@ -21,8 +21,6 @@
             var response = MenuDataService.getItemsForCategory($stateParams.itemId);
 
             response.then(function(data) {
-                console.log("From ItemComponentController");
-                console.log(data.data.menu_items);
                 ctrl.itemsList = data.data.menu_items;
             })
         }
