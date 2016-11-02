@@ -1,0 +1,8 @@
+.panel-heading, .panel-body {
+    font-size: 1.2em;
+}
+
+.panel {
+    margin: 2px;
+    padding: 0;
+}

@@ -24,7 +24,7 @@
             })
 
             .state('itemList', {
-                url: '/category/{itemId}',
+                url: '/category/{itemId}/{name}',
                 templateUrl: 'templates/main-items.template.html',
             });
     }

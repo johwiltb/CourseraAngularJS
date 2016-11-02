@@ -1,5 +1,5 @@
 <div class="list-group">
-    <button type="button" class="list-group-item" ng-repeat="category in mctrl.list" ui-sref="itemList({itemId: category.short_name})">
+    <button type="button" class="list-group-item" ng-repeat="category in mctrl.list" ui-sref="itemList({itemId: category.short_name, name: category.name})">
         {{ category.name }}
     </button>
 </div>

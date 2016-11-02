@@ -17,7 +17,11 @@
     function ItemComponentController($stateParams, MenuDataService) {
         var ctrl = this;
 
+
+        ctrl.categoryName = "This is a test name";
         ctrl.$onInit = function () {
+            ctrl.categoryName = $stateParams.name;
+
             var response = MenuDataService.getItemsForCategory($stateParams.itemId);
 
             response.then(function(data) {
