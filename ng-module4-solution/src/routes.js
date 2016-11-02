@@ -20,13 +20,9 @@
             .state('categoriesList', {
                 url: '/categories',
                 templateUrl: 'templates/main-categories.template.html',
-                controller: 'MenuAppController as ctrl',
-                resolve: {
-                    categories: ['MenuDataService', function (MenuDataService) {
-                        return MenuDataService.getAllCategories();
-                    }]
-                }
+                controller: 'MenuAppController as ctrl'
             })
+
             .state('itemList', {
                 url: '/category/{itemId}',
                 templateUrl: 'templates/main-items.template.html',

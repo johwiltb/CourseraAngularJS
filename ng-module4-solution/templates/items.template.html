@@ -1,4 +1,3 @@
-Hello {{itemList}} - {{itemList.length}}
 <ol>
-    <ul ng-repeat="item in itemList">{{item}}</ul>
+    <ul ng-repeat="item in $ctrl.itemsList">{{item.name}} - {{item.description}}</ul>
 </ol>
