@@ -53,6 +53,7 @@
             <p class="text-success">{{regCtrl.msg}}</p>
             <br>
             <button
+                    ng-disabled="regForm.$invalid"
                     ng-hide="regForm.$invalid"
                     ng-click="regCtrl.submit()">Submit</button>
         </form>
