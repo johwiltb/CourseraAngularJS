@@ -1,0 +1,60 @@
+<div class="container">
+    <link rel="stylesheet" href="css/registration.css">
+
+    <h1>Sign Up page!</h1>
+    <fieldset>
+        <legend>Registration Form</legend>
+        <form name="regForm" novalidate>
+            <input type="text" name="fname" placeholder="First Name"
+                   ng-model="regCtrl.fname"
+                   required
+                   minlength="1">
+            <span
+                    ng-if="(regForm.fname.$error.minlength || regForm.fname.$error.required) && regForm.fname.$touched">
+            You must enter a first name!
+          </span>
+            <br>
+            <input type="text" name="lname" placeholder="Last Name"
+                   ng-model="regCtrl.lname"
+                   required
+                   minlength="1">
+            <span
+                    ng-if="(regForm.lname.$error.minlength || regForm.lname.$error.required) && regForm.lname.$touched">
+            You must enter a last name!
+          </span>
+            <br>
+            <input type="email" name="email" placeholder="Email"
+                   ng-model="regCtrl.email"
+                   required>
+            <span
+                    ng-if="regForm.email.$invalid && regForm.email.$touched">
+                You must enter a valid email!
+          </span>
+            <br>
+            <input type="text" name="phone" placeholder="Phone: ###-###-####"
+                   ng-model="regCtrl.phone"
+                   required
+                   pattern="(\d{3})-(\d{3})-(\d{4})">
+            <span
+                    ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+                Phone number must be in form: ###-###-####
+          </span>
+            <br>
+            <input type="text" name="favorite" placeholder="Favorite Dish: A3"
+                   ng-model="regCtrl.favorite"
+                   pattern="([A-Za-z]){1,2}(\d{1,2})">
+            <span
+                ng-if="regForm.favorite.$invalid && regForm.favorite.$touched">
+                Must be valid format ex. C4
+            </span>
+            {{regCtrl.error}}
+            <br>
+            <br>
+            <p class="text-success">{{regCtrl.msg}}</p>
+            <br>
+            <button
+                    ng-hide="regForm.$invalid"
+                    ng-click="regCtrl.submit()">Submit</button>
+        </form>
+    </fieldset>
+</div>

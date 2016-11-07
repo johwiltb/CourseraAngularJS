@@ -1,0 +1,16 @@
+legend {
+    color: white;
+}
+
+input {
+    color: black;
+}
+
+button {
+    background-color: #f6b319;
+}
+
+span {
+    font-style: italic;
+    cursor: pointer;
+}
